@@ -9,6 +9,7 @@ $x_t$ Position at time t
 $u_t$ Control input at time t (Force, applied by PID controller)
 The goal of the BNN is to predict the next position $x_{t+1}$, given the current position and control input $(x_t,u_t)$.
 
-We train the BNN by generating an artificial Dataset $D$, using control_system_sim
+We train the BNN by generating an artificial Dataset $D = \{((x_t,u_t),x_{t+1})  \}$, using the control system simulation.
+The BNN also gives the uncertainty of the prediction.
 
 
