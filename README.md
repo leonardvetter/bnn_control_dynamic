@@ -3,7 +3,7 @@ The goal is to use a Bayesian Neuronal Network (BNN) to learn the dynamic behavi
 
 
 control_system_sim.py defines the class SMD_system_Sim that simulates the physical system and the class PID_Controller.
-To see a system of the symulation, download the files and execute demo_control_system.py.
+To see a simulation of the system, download the files and execute demo_control_system.py.
 
 
 bnn_trained_on_control_system_02.py trains a simple BNN to predict the system behaviour.
