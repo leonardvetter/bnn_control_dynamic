@@ -1,7 +1,4 @@
 import numpy as np
-
-
-
 # ────────────────────────────────────────────────────────────────
 #  Spring–Mass–Damper (discrete-time, constant-acceleration)
 # ────────────────────────────────────────────────────────────────
@@ -113,7 +110,8 @@ class PID_Controller:
         ----------
         system    : SMD_System_Sim
         duration  : total simulation time [s]
-        commands  : list of [t, target] pairs (step sequence)
+        commands  : list of [t, target] pairs (step sequence) 
+        t         : defines at which time the target is fed to the controller
         time_step : integration step size; must divide sample_rate
 
         Returns (numpy arrays)
