@@ -9,7 +9,7 @@ To see a simulation of the system, download the files and execute demo_control_s
 bnn_trained_on_control_system_02.py trains a simple BNN to predict the system behaviour.
 
 
-$x_t$ Position at time t
+$s_t$ State at time t
 
 
 $u_t$ Control input at time t (Force, applied by PID controller)
@@ -17,12 +17,12 @@ $u_t$ Control input at time t (Force, applied by PID controller)
 
 The goal of the BNN is to predict the next position $x_{t+1}$, given the current position, velocity and control input $(x_t,u_t)$.
 EDIT: It was observed that the BNN was uncertain at times with no control input. The hypothesis is that it has no knowledge about the history of the system.
-Therefore, the jupyter notebook we improved the accuracy by including v_t and a_t for the predicion, i.e. we use $(x_t, v_t, a_t,u_t)$ for predicting x_t+1.
+Therefore, the jupyter notebook we improved the accuracy by including v_t and a_t for the predicion, i.e. we use $s_t = (x_t, v_t, a_t,u_t)$ for predicting x_t+1.
 They are approximated by v_t = (x_t-x_t-1)/delta_t and a_t = (x_t-x_t-2)/delta_t^2. We could probably also just use $(x_t,x_{t-1},x_{t-2},u_t)$ as input.
 
 
 
-We train the BNN by generating an artificial Dataset $D = \{((x_t,u_t),x_{t+1})  \}$, using the control system simulation.
+We train the BNN by generating an artificial Dataset $D = \{((s_t,u_t),x_{t+1})  \}$, using the control system simulation.
 The BNN also gives the uncertainty of the prediction.
 
 
